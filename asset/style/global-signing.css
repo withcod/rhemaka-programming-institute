@@ -1,0 +1,384 @@
+/*
+Teckky wed 0001 GlobalSoulRescue Team
+https://teckky.com/ty-001-GlobalSoulRescue-Team
+*/
+
+/* ---------------------------------------------
+  Table of contents
+------------------------------------------------
+01. variables
+02. reset
+03. global styles
+04. header
+05. showcase
+06. tracks
+07. goals
+08. achievements
+09. contact form
+10. footer
+11. preloader
+12. search
+--------------------------------------------- */
+/*
+  variables
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
+:root{
+ /*
+ //color variables
+ */
+ --dark-gray:rgb(0, 0, 0);
+ --light-gray:rgb(117, 117, 117);
+ --lighter-gray:rgb(173, 173, 173);
+ --dark-blue:#0088FF;
+ --light-blue:rgb(68, 106, 231);
+ --lighter-blue:rgb(149, 174, 255);
+ --white:rgb(255, 255, 255);
+ --black:rgb(0, 0, 0);
+ --dark-red:rgb(155, 58, 58);
+ --light-red:rgb(218, 119, 119);
+ --lighter-red:rgb(255, 176, 176);
+}
+ /*
+ reset
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ width:fit-content;
+ height:fit-content;
+}
+a{
+ text-decoration: none !important;
+ color:rgb(10, 105, 160);
+ text-align: end;
+}
+ul{
+ list-style-type: none;
+ display:flex;
+}
+header, nav, section, article, aside, footer, hgroup {
+ display: block;
+}
+.clearfix:after {
+ content: ".";
+ display: block;
+ clear: both;
+ visibility: hidden;
+ line-height: 0;
+ height: 0;
+}
+
+.clearfix {
+ display: inline-block;
+}
+
+html[xmlns] .clearfix {
+ display: block;
+}
+
+* html .clearfix {
+ height: 1%;
+}
+* {
+ box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+ margin-top: 0px;
+ margin-bottom: 0px;
+}
+
+ul {
+ margin-bottom: 0px;
+}
+
+p {
+ line-height:auto;
+ text-align: center;
+ color: rgb(235, 235, 235);
+}
+input, textarea{
+ outline:none;
+}
+input[type="checkbox"]{
+  width:15px;
+  height:15px;
+  display:inline;
+  accent-color: rgb(0, 0, 0);
+}
+/* 
+ global styles
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
+html, body {
+ width:100vw;
+ font-family:'Segoe UI';
+ overflow-x: hidden;
+ margin:0;
+ padding:0;
+ min-height:100vh;
+ background:var(--dark-blue);
+ display:flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+::selection {
+ background: rgb(0, 0, 0);
+ color:var(--white);
+}
+
+::-moz-selection {
+ background: var(--dark-red);
+ color: var(--white);
+}
+
+/* 
+header
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
+header {
+ width:30%;
+ display: grid;
+ height:100vh;
+ justify-content: center;
+ align-items:start;
+ padding: 10rem 0 0 0;
+}
+header .header-Content {
+ display: grid;
+ width:100%;
+ justify-content:start;
+ align-items:center;
+}
+header .header-Content h2 {
+ font-family:'Segoe UI';
+ font-size:30px;
+ background: rgb(255, 255, 255);
+ border-radius:40px;
+ font-weight:bold;
+ padding:10px 30px;
+ width:fit-content;
+ margin:0 0 30px 0;
+ justify-self:start;
+ align-self:end;
+}
+header .header-Content p {
+ font-family:'Segoe UI';
+ font-size:17px;
+ width:250px;
+ height: 70%;
+ text-align: start;
+ justify-self:center;
+ align-self:start;
+}
+header .arrow-case{
+ display:flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+header .arrow{
+ width:80px;
+ height:80px;
+ border-radius: 50%;
+ background: rgba(0, 0, 0, 0.589);
+ justify-content: center;
+ align-items: center;
+ display:flex;
+ justify-self: end;
+}
+header .arrow img{
+ width:80px;
+ height:80px;
+}
+header :last-child{
+ margin-top: 5px;
+ font-size: 12px;
+ justify-self: end;
+ text-align: center;
+}
+
+main{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width:350px;
+ height:40em;
+ background:rgba(255, 255, 255, 0.425);
+ border-radius: 30px;
+ padding:50px 0;
+ box-shadow: -10px 0 20px 10px rgba(3, 3, 3, 0.178);
+ margin:10px 0;
+}
+main h2{
+ width:85%;
+ justify-self: center;
+ font-size:30px;
+ margin: 0 0 10px 0;
+}
+main .error{
+  font-size: 13px;
+  color:rgb(252, 0, 147);
+  width:80%;
+  display:none;
+}
+form{
+display: flex;
+flex-direction: column;
+align-items:center;
+color:rgb(241, 241, 241);
+width:100%;
+}
+input, .number{
+ height:2.5rem;
+ border-radius:50px;
+ border:none;
+ margin:13px 0;
+ width:85%;
+ padding:0 20px;
+ color:rgb(133, 133, 133);
+}
+input[type="submit"]{
+ margin:5rem;
+ background: var(--dark-blue);
+ width:65%;
+ color:white;
+}
+input[type="submit"]:hover{
+ background: #00223fa1;
+}
+.number{
+ display:flex;
+ justify-content: space-between;
+ align-items: center;
+ width:85%;
+ background: rgb(255, 255, 255);
+}
+.number >img{
+  width:30px;
+  margin-right:5px;
+}
+.number >p{
+  color:rgb(114, 114, 114);
+  font-size:14px;
+  cursor:pointer;
+}
+footer{
+ width:25%;
+ display: flex;
+ flex-direction: column;
+ align-items: end;
+margin:0 100px 0 0;
+}
+footer p, a {
+ text-align:end;
+ width:80%;
+ font-size: 17px;
+}
+footer a:hover{
+ color:black;
+ cursor: pointer;
+}
+footer .sign-with{
+ margin-top: 50px;
+ width:70%;
+ display:flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+}
+.sign-with  div {
+ display: flex;
+ justify-content: space-between;
+ width:100%;
+}
+.sign-with  div div{
+ width:50px;
+ height:50px;
+ border-radius: 50%;
+ background: white;
+ justify-content: center;
+ align-items: center;
+ display:flex;
+}
+.sign-with div img:hover{
+ transform:scale(150%);
+ transition: 0.5s;
+}
+.sign-with div img{
+ width:30px;
+ height:30px
+}
+.flag-container{
+  position: fixed;
+  left:66%;
+  right:34%;
+  display:none;
+}
+footer .sign-with p{
+ margin-top: 10px;
+ font-size:12px;
+ align-self: center;
+ justify-self: center;
+ text-align: center;
+}
+.flag-drop-down{
+  background: white;
+  padding:20px 5px;
+  height: 15rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position:fixed;
+  left:50%;
+  right:50%;
+  border-radius:10px;
+  box-shadow: 0 0 10px gray;
+}
+.flag-drop-down div{
+  display:flex;
+  justify-content: space-between;
+  padding:7px;
+  width:180px;
+  background:rgb(255, 255, 255);
+  border:none;
+}
+.flag-drop-down div:hover{
+  background: rgb(207, 207, 207);
+}
+.flag-drop-down div img{
+  width:30px;
+}
+.flag-drop-down div p{
+  color:rgb(155, 155, 155);
+}
+.flag-container >img{
+  width:30px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 10px gray;
+}
+@keyframes sliderUpDown {
+ 0%{
+  transform: translateY(0);
+ }
+ 50% {
+  transform: translateY(30px);
+ }
+ 100% {
+  transform: translateY(0);
+ }
+}
+.arrow img{
+ animation: sliderUpDown 3s ease-in-out 4s infinite ;
+}
+header .arrow-case p{
+ animation: sliderUpDown 3s ease-in-out 4s infinite ;
+}
