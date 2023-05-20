@@ -382,3 +382,24 @@ footer .sign-with p{
 header .arrow-case p{
  animation: sliderUpDown 3s ease-in-out 4s infinite ;
 }
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+  body{
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    align-content:center;
+  }
+  main{
+    max-width:90vw;
+  }
+  footer{
+    width:100%;
+    margin:50px 0;
+    flex-direction:column-reverse;
+    height:300px;
+    align-items: space-between;
+  }
+  footer p, footer a{
+    text-align: center;
+  }
+  }
