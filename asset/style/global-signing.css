@@ -10,15 +10,16 @@ https://teckky.com/ty-001-GlobalSoulRescue-Team
 02. reset
 03. global styles
 04. header
-05. showcase
-06. tracks
-07. goals
-08. achievements
-09. contact form
-10. footer
-11. preloader
-12. search
+05. main
+06. footer
+07. animation templates
+08. @media queries
+09. @media queries > header
+10. @media queries > main
+11. @media queries > footer
+12. ..NOTE ??????????
 --------------------------------------------- */
+
 /*
   variables
 ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
@@ -30,8 +31,8 @@ https://teckky.com/ty-001-GlobalSoulRescue-Team
  --dark-gray:rgb(0, 0, 0);
  --light-gray:rgb(117, 117, 117);
  --lighter-gray:rgb(173, 173, 173);
- --dark-blue:#0088FF;
- --light-blue:rgb(68, 106, 231);
+ --dark-blue:#00a2ff;
+ --light-blue:rgb(0, 153, 255);
  --lighter-blue:rgb(149, 174, 255);
  --white:rgb(255, 255, 255);
  --black:rgb(0, 0, 0);
@@ -53,11 +54,14 @@ figure, header, nav, section, article, aside, footer, figcaption {
  outline: 0;
  width:fit-content;
  height:fit-content;
+ box-sizing: border-box;
 }
 a{
  text-decoration: none !important;
  color:rgb(10, 105, 160);
  text-align: end;
+ width:fit-content;
+ margin: none;
 }
 ul{
  list-style-type: none;
@@ -125,7 +129,7 @@ html, body {
  min-height:100vh;
  background:var(--dark-blue);
  display:flex;
- justify-content: space-between;
+ justify-content: space-around;
  align-items: center;
 }
 
@@ -147,7 +151,7 @@ header {
  width:30%;
  display: grid;
  height:100vh;
- justify-content: center;
+ justify-content:center;
  align-items:start;
  padding: 10rem 0 0 0;
 }
@@ -199,13 +203,22 @@ header .arrow img{
  width:80px;
  height:80px;
 }
+.arrow img{
+  animation: sliderUpDown 3s ease-in-out 4s infinite ;
+ }
+ header .arrow-case p{
+  animation: sliderUpDown 3s ease-in-out 4s infinite ;
+ }
 header :last-child{
  margin-top: 5px;
  font-size: 12px;
  justify-self: end;
  text-align: center;
 }
-
+/* 
+main
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
 main{
  display: flex;
  flex-direction: column;
@@ -216,7 +229,7 @@ main{
  border-radius: 30px;
  padding:50px 0;
  box-shadow: -10px 0 20px 10px rgba(3, 3, 3, 0.178);
- margin:10px 0;
+ margin:10px 5%;
 }
 main h2{
  width:85%;
@@ -264,6 +277,7 @@ input[type="submit"]:hover{
 }
 .number >img{
   width:30px;
+  height:20px;
   margin-right:5px;
 }
 .number >p{
@@ -271,16 +285,27 @@ input[type="submit"]:hover{
   font-size:14px;
   cursor:pointer;
 }
+ .flag-container{
+   position: fixed;
+   left:66%;
+   right:34%;
+   display:none;
+ }
+   /* 
+footer
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
 footer{
- width:25%;
+ width:30%;
  display: flex;
  flex-direction: column;
- align-items: end;
-margin:0 100px 0 0;
+ align-items:center;
+ justify-content: center;
+ margin:0;
 }
 footer p, a {
  text-align:end;
- width:80%;
+ width:70%;
  font-size: 17px;
 }
 footer a:hover{
@@ -293,35 +318,8 @@ footer .sign-with{
  display:flex;
  flex-direction: column;
  justify-content: space-between;
- align-items: center;
-}
-.sign-with  div {
- display: flex;
- justify-content: space-between;
- width:100%;
-}
-.sign-with  div div{
- width:50px;
- height:50px;
- border-radius: 50%;
- background: white;
- justify-content: center;
- align-items: center;
- display:flex;
-}
-.sign-with div img:hover{
- transform:scale(150%);
- transition: 0.5s;
-}
-.sign-with div img{
- width:30px;
- height:30px
-}
-.flag-container{
-  position: fixed;
-  left:66%;
-  right:34%;
-  display:none;
+ justify-self: end;
+ align-items:end;
 }
 footer .sign-with p{
  margin-top: 10px;
@@ -350,21 +348,49 @@ footer .sign-with p{
   background:rgb(255, 255, 255);
   border:none;
 }
+.sign-with  div {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+ }
+ .sign-with  div div{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+ }
+ .sign-with div img:hover{
+  transform:scale(120%);
+  transition: 0.7s;
+ }
+ .sign-with div img{
+  width:30px;
+  height:30px
+ }
 .flag-drop-down div:hover{
   background: rgb(207, 207, 207);
 }
 .flag-drop-down div img{
   width:30px;
+  height: 20px;
 }
 .flag-drop-down div p{
   color:rgb(155, 155, 155);
 }
 .flag-container >img{
   width:30px;
+  height:30px;
   border-radius: 50%;
   background: rgb(255, 255, 255);
   box-shadow: 0 0 10px gray;
 }
+   /* 
+animation template
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
 @keyframes sliderUpDown {
  0%{
   transform: translateY(0);
@@ -376,12 +402,10 @@ footer .sign-with p{
   transform: translateY(0);
  }
 }
-.arrow img{
- animation: sliderUpDown 3s ease-in-out 4s infinite ;
-}
-header .arrow-case p{
- animation: sliderUpDown 3s ease-in-out 4s infinite ;
-}
+   /* 
+@media queries!
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
 @media only screen and (min-width: 360px) and (max-width: 768px) {
   body{
     flex-direction: column;
@@ -403,3 +427,18 @@ header .arrow-case p{
     text-align: center;
   }
   }
+   /* 
+@media queries! > header
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
+   /* 
+@media queries! > main
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
+   /* 
+@media queries! > footer
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+*/
+/* 
+..NOTE ?????????
+*/
